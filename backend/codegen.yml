@@ -1,0 +1,9 @@
+schema: "src/**/*.graphql"
+generates:
+  src/__generated__/types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
+    config:
+      scalars:
+        Email: string

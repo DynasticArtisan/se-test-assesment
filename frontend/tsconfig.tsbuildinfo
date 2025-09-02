@@ -1,0 +1,1 @@
+{"root":["./src/apolloclient.ts","./src/main.tsx","./src/vite-env.d.ts","./src/shared/confirmdialog.tsx","./src/shared/intersectiontrigger.tsx","./src/shared/searchinput.tsx","./src/users/usercreatedialog.tsx","./src/users/userdetailsdialog.tsx","./src/users/userlist.tsx","./src/users/userupdatedialog.tsx"],"version":"5.8.3"}

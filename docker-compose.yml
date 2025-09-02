@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo:4.2
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - MONGODB_URL=mongodb://mongo:27017/db
+    depends_on:
+      - mongo
+    command: sh -c "npm run seed && npm run start"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
